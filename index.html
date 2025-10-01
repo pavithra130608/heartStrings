@@ -1,327 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BIRTHDAY 💖</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap');
+  <meta charset="UTF-8">
+  <title>Our Love Story ❤️</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      margin: 0;
+      padding: 0;
+    }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: url("https://cdn.wallpapersafari.com/83/40/VfRQEw.jpg") no-repeat center center fixed;
-    background-size: cover;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    color: #333;
-}
+    /* Landing Section */
+    #home {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    #home h1 {
+      font-size: 3rem;
+    }
+    #home p {
+      font-size: 1.5rem;
+    }
 
-/* Shared Headings */
-h1, h2 {
-    font-family: 'Pacifico', cursive;
-    color: #ff4d6d;
-    text-shadow: 2px 2px 8px rgba(255, 105, 135, 0.4);
-}
+    /* Memory Slider */
+    #memories {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    #memories h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      background: linear-gradient(45deg, #ff4d6d, #ff7eb3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .memory-slider {
+      display: flex;
+      overflow: hidden;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      animation: slide 20s infinite linear;
+    }
+    .memory-slider img,
+    .memory-slider video {
+      width: 100%;
+      border-radius: 15px;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
 
-/* Landing */
-#landing {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 209, 220, 0.6); /* soft pink overlay */
-    backdrop-filter: blur(3px); /* dreamy effect */
-    text-align: center;
-}
-#landing h1 {
-    font-size: 3.2rem;
-    animation: fadeIn 2s ease-in-out;
-}
-#openBtn {
-    margin-top: 30px;
-    padding: 15px 40px;
-    font-size: 1.3rem;
-    color: #fff;
-    background: #ff4d6d;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-#openBtn:hover { background: #e63956; transform: scale(1.05); }
+    /* Proposal Section */
+    #proposal {
+      padding: 70px 20px;
+      background: rgba(255, 209, 220, 0.6);
+      backdrop-filter: blur(3px);
+      text-align: center;
+    }
+    #proposal h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(45deg, #ff4d6d, #ff7eb3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    #proposal p {
+      font-size: 1.3rem;
+      color: #333;
+    }
 
-/* Memory Section */
-#memory {
-    padding: 60px 20px;
- justify-content: center;
-    background: rgba(255, 209, 220, 0.6); /* soft pink overlay */
-    backdrop-filter: blur(3px); /* dreamy effect */
-    text-align: center;
-}
-.memory-slider {
-    display: flex;
-    gap: 30px;
-    animation: slideLeft 30s linear infinite;
-    animation-play-state: paused;
-}
-.memory-item {
-    flex: 0 0 auto;
-    width: 280px;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    padding: 15px;
-    transition: transform 0.3s;
-}
-.memory-item:hover { transform: translateY(-8px); }
-.memory-item img {
-    width: 100%;
-    border-radius: 15px;
-}
-.memory-item p {
-    margin-top: 10px;
-    font-style: italic;
-    color: #555;
-}
+    /* Gift Slider */
+    #gifts {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    #gifts h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      background: linear-gradient(45deg, #ff4d6d, #ff7eb3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gift-slider {
+      display: flex;
+      overflow: hidden;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      animation: slide 25s infinite linear;
+    }
+    .gift-slider img {
+      width: 100%;
+      border-radius: 15px;
+    }
 
-/* Video Section */
-#video {
-    padding: 60px 20px;
-    background: rgba(255, 209, 220, 0.6); /* soft pink overlay */
-    backdrop-filter: blur(3px); /* dreamy effect */
-    text-align: center;
-}
-#video figure {
-    margin: 20px auto;
-    max-width: 650px;
-    background: #fff;
-    border-radius: 15px;
-    padding: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-#video figcaption {
-    margin-top: 10px;
-    font-size: 0.95rem;
-    color: #444;
-}
+    /* Timeline */
+    #timeline {
+      padding: 70px 20px;
+      background: rgba(255, 209, 220, 0.6);
+      backdrop-filter: blur(3px);
+      text-align: center;
+    }
+    #timeline h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      background: linear-gradient(45deg, #ff4d6d, #ff7eb3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background: #ff4d6d;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    .timeline-item {
+      padding: 20px 30px;
+      position: relative;
+      width: 50%;
+    }
+    .timeline-item .content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .timeline-item img,
+    .timeline-item video {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .timeline-item video {
+      max-height: 300px;
+      outline: none;
+    }
+    .timeline-item.left { left: 0; }
+    .timeline-item.right { left: 50%; }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      width: 25px;
+      height: 25px;
+      background: #ff4d6d;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .timeline-item.left::after { right: -17px; }
+    .timeline-item.right::after { left: -17px; }
+    .timeline-item .content h3 {
+      color: #ff4d6d;
+      margin: 0;
+    }
 
-/* Proposal */
-#proposal {
-    padding: 80px 20px;
-   justify-content: center;
-    background: rgba(255, 209, 220, 0.6); /* soft pink overlay */
-    backdrop-filter: blur(3px); /* dreamy effect */
-    text-align: center;
-}
-#proposal h2 {
-    font-size: 2.8rem;
-    color: #fff;
-}
-#proposalBtn {
-    margin-top: 20px;
-    padding: 15px 40px;
-    font-size: 1.3rem;
-    color: #fff;
-    background: #ff4d6d;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-#proposalBtn:hover { background: #e63956; transform: scale(1.05); }
-#finalMessage {
-    margin-top: 30px;
-    font-size: 1.7rem;
-    color: #fff;
-    font-weight: bold;
-    display: none;
-    animation: fadeIn 2s ease-in-out;
-}
+    /* Dark Phase (Fight Period) */
+    .timeline-item.dark-phase .content {
+      background: #2c2c2c;
+      color: #fff;
+      border: 2px solid #ff4d6d;
+    }
+    .timeline-item.dark-phase h3 {
+      color: #ff7eb3;
+    }
+    .timeline-item.dark-phase p {
+      color: #f5f5f5;
+    }
 
-/* Gift */
-#gift {
-    padding: 60px 20px;
-     justify-content: center;
-    background: rgba(255, 209, 220, 0.6); /* soft pink overlay */
-    backdrop-filter: blur(3px); /* dreamy effect */
-    text-align: center;
-}
-.gift-slider {
-    display: flex;
-    gap: 30px;
-    animation: slideLeft 25s linear infinite;
-    animation-play-state: paused;
-}
-.gift-item {
-    flex: 0 0 auto;
-    width: 280px;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    padding: 15px;
-    transition: transform 0.3s;
-}
-.gift-item:hover { transform: translateY(-8px); }
-.gift-item img {
-    width: 100%;
-    border-radius: 15px;
-}
-#gift h1 {
-    margin-top: 40px;
-    font-size: 1.8rem;
-    color: #ff4d6d;
-}
-
-/* Special Video */
-#video2 {
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #ffe5ec, #fad0c4);
-    text-align: center;
-}
-#video2 video {
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-
-/* Confetti */
-.confetti {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    top: -10px;
-    animation: fall 5s linear infinite;
-}
-@keyframes fall {
-    to { transform: translateY(110vh) rotate(360deg); }
-}
-
-/* Animations */
-@keyframes slideLeft {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-</style>
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .timeline::after { left: 20px; }
+      .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 25px;
+      }
+      .timeline-item.right { left: 0%; }
+      .timeline-item.left::after,
+      .timeline-item.right::after { left: 5px; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Landing -->
-<section id="landing">
-    <h1>Happy Birthday, My Love! 🎂❤️
-        OCTOBER 8
-    </h1>
-    <button id="openBtn">Open Your Surprise</button>
-</section>
+  <!-- Landing -->
+  <section id="home">
+    <div>
+      <h1>Welcome to Our Love Story ❤️</h1>
+      <p>Every memory, every fight, every smile... it’s all us ✨</p>
+    </div>
+  </section>
 
-<!-- Memories -->
-<section id="memory">
-    <h2>Memories Together 💞</h2>
+  <!-- Memories -->
+  <section id="memories">
+    <h2>Sweet Memories 🌸</h2>
     <div class="memory-slider">
-        <div class="memory-item"><img src="b5.jpg"><p>That smile 🫠</p></div>
-        <div class="memory-item"><img src="b4.jpg"><p>Golden moment</p></div>
-        <div class="memory-item"><img src="b3.jpg"><p>Still my fav pic ❤️</p></div>
-        <div class="memory-item"><img src="vesti.jpg"><p>Andha siripu 🫠</p></div>
-        <div class="memory-item"><img src="me u.jpg"><p>Our day 🌸</p></div>
-        <div class="memory-item"><img src="bala2.png"><p>Azhagoo azhaguu 👀🧿</p></div>
+      <img src="mem1.jpg" alt="Memory 1">
+      <video autoplay loop muted>
+        <source src="mem2.mp4" type="video/mp4">
+      </video>
+      <img src="mem3.jpg" alt="Memory 3">
     </div>
-</section>
+  </section>
 
-<!-- Video Section -->
-<section id="video">
-    <h2>Captured Moments 🎥</h2>
-    <figure>
-        <video width="600" controls autoplay loop muted>
-            <source src="bala hostel.mp4" type="video/mp4">
-        </video>
-        <figcaption>Somewhere your fav posters in your room 🎥❤️✨</figcaption>
-    </figure>
-    <figure>
-        <video width="600" controls autoplay loop muted>
-            <source src="b1.mp4" type="video/mp4">
-        </video>
-        <figcaption>❤️</figcaption>
-    </figure>
-</section>
+  <!-- Proposal -->
+  <section id="proposal">
+    <h2>My Proposal to You 💍</h2>
+    <p>
+      Through every moment — smiles, tears, and even silence —  
+      I’ve loved you endlessly ❤️.  
+      Will you stay mine forever?
+    </p>
+  </section>
 
-<!-- Proposal -->
-<section id="proposal">
-    <h2>I have one more special thing to ask you…</h2>
-    <button id="proposalBtn">Click this, Thanga Pullaa 💍</button>
-    <div id="finalMessage">You’ve made my life so special! 💖 Will you be mine forever? 💍</div>
-</section>
-
-<!-- Gift -->
-<section id="gift">
-    <h2>Some Makings for Us 🎁</h2>
+  <!-- Gifts -->
+  <section id="gifts">
+    <h2>Special Gifts 🎁</h2>
     <div class="gift-slider">
-        <div class="gift-item"><img src="we1.png"></div> 
-        <div class="gift-item"><img src="WhatsApp Image 2025-06-13 at 00.00.22.jpeg"> </div>
-         <div class="gift-item"><img src="Gemini_Generated_Image_20flvj20flvj20fl.png"></div>
-         <div class="gift-item"><img src="Gemini_Generated_Image_d2gjz4d2gjz4d2gj.png"></div>
-          <div class="gift-item"><img src="ring1.jpg"></div> 
-          <div class="gift-item"><img src="ring2.jpg"></div> 
-          <div class="gift-item"><img src="ours.jpg"></div> 
-          <div class="gift-item"><img src="WhatsApp Image 2025-09-08 at 11.51.34_ec0e6a8e.jpg"></div>
+      <img src="gift1.jpg" alt="Gift 1">
+      <img src="gift2.jpg" alt="Gift 2">
+      <img src="gift3.jpg" alt="Gift 3">
     </div>
-    <h1>My love for you goes beyond everything... LOVE YOUUU 💕😍</h1>
-</section>
+  </section>
 
-<!-- Special Video 
-<section id="video2">
-    <h2>Special Video for You 🎥❤️</h2>
-    <video width="600" controls autoplay loop muted>
-        <source src="pavi hostel.mp4" type="video/mp4">
-    </video>
-</section>-->
+  <!-- Timeline -->
+  <section id="timeline">
+    <h2>Our Journey Together ⏳❤️</h2>
+    <div class="timeline">
 
-<!-- Music -->
-<audio id="birthdayMusic" src="https://mobcup.fm/d/VdfBm4z6/mp3" loop ></audio>
-<audio id="proposalMusic" src="aud.mp3"></audio>
-<audio id="afterProposalMusic" src="aud1.mp3" loop></audio>
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>2019 – First Meet ✨</h3>
+          <img src="meet.jpg" alt="First Meet">
+          <p>That day I never knew my life would change forever 💖</p>
+        </div>
+      </div>
 
-<script>
-// Surprise Button
-document.getElementById('openBtn').addEventListener('click', () => {
-    document.getElementById('memory').scrollIntoView({behavior: 'smooth'});
-    document.getElementById('birthdayMusic').play();
-    document.querySelector('.memory-slider').style.animationPlayState = 'running';
-});
+      <div class="timeline-item right">
+        <div class="content">
+          <h3>2020 – Our First Trip 🌸</h3>
+          <video controls>
+            <source src="trip.mp4" type="video/mp4">
+          </video>
+          <p>Unforgettable moments, laughter, and pure happiness ✨</p>
+        </div>
+      </div>
 
-// Proposal Button
-document.getElementById('proposalBtn').addEventListener('click', () => {
-    document.getElementById('finalMessage').style.display = 'block';
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>2021 – Stronger Together 💪</h3>
+          <img src="2021.jpg" alt="Memories 2021">
+          <p>We faced ups & downs but love always won ❤️</p>
+        </div>
+      </div>
 
-    const birthdayMusic = document.getElementById('birthdayMusic');
-    const proposalMusic = document.getElementById('proposalMusic');
-    const afterProposalMusic = document.getElementById('afterProposalMusic');
+      <div class="timeline-item right">
+        <div class="content">
+          <h3>2022 – Favourite Memories 🎶</h3>
+          <video controls>
+            <source src="fav-moment.mp4" type="video/mp4">
+          </video>
+          <p>Every smile, every picture tells a story of us 🥰</p>
+        </div>
+      </div>
 
-    birthdayMusic.pause();
-    birthdayMusic.currentTime = 0;
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>2023 – More Love, More Us 💕</h3>
+          <img src="2023.jpg" alt="Love 2023">
+          <p>Our bond only grew stronger, and my love for you deeper ❤️</p>
+        </div>
+      </div>
 
-    proposalMusic.play();
-    proposalMusic.onended = () => afterProposalMusic.play();
+      <!-- Fight Phase -->
+      <div class="timeline-item right dark-phase">
+        <div class="content">
+          <h3>2024 August 💔</h3>
+          <img src="lastpic.jpg" alt="Tough Times">
+          <p>
+            We fought and stayed apart for a month... it was one of the hardest times 😔.  
+            But even in silence, our hearts kept beating for each other ❤️.  
+            This phase showed how deep our love truly is – stronger than any fight.
+          </p>
+          <p>This was the last picture you took... before this began 🖤</p>
+        </div>
+      </div>
 
-    // Confetti
-    for (let i=0; i<100; i++) {
-        let confetti = document.createElement('div');
-        confetti.classList.add('confetti');
-        confetti.style.left = Math.random()*100 + 'vw';
-        confetti.style.backgroundColor = `hsl(${Math.random()*360}, 70%, 60%)`;
-        document.getElementById('proposal').appendChild(confetti);
-        setTimeout(()=> confetti.remove(), 5000);
-    }
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>2024 – Forever Promises 💍</h3>
+          <video controls>
+            <source src="promise.mp4" type="video/mp4">
+          </video>
+          <p>Every moment leads us to forever together ✨</p>
+        </div>
+      </div>
 
-    // Gift slider starts
-    document.querySelector('.gift-slider').style.animationPlayState = 'running';
-    setTimeout(()=> document.getElementById('gift').scrollIntoView({behavior:'smooth'}), 3000);
-});
-</script>
+    </div>
+  </section>
 
 </body>
 </html>
