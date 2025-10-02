@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BIRTHDAY 💖</title>
+<title>HEART STRINGS 💖</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap');
 
@@ -11,7 +11,6 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: url("https://cdn.wallpapersafari.com/83/40/VfRQEw.jpg") no-repeat center center fixed;
     background-size: cover;
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -32,8 +31,8 @@ h1, h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 209, 220, 0.6);
-    backdrop-filter: blur(3px);
+    background: url("https://cdn.wallpapersafari.com/83/40/VfRQEw.jpg") no-repeat center center fixed;
+    background-size: cover;
     text-align: center;
 }
 #landing h1 {
@@ -254,6 +253,34 @@ h1, h2 {
     top: -10px;
     animation: fall 5s linear infinite;
 }
+/* Final Video Section */
+#finalVideo {
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+#finalVideo::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 182, 193, 0.6); /* transparent pink overlay */
+    backdrop-filter: blur(3px);
+    z-index: -1;
+}
+
+#finalVideo h2 {
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
 @keyframes fall {
     to { transform: translateY(110vh) rotate(360deg); }
 }
@@ -424,7 +451,7 @@ h1, h2 {
 
 <!-- Proposal -->
 <section id="proposal">
-    <h2>I have one more special thing to ask you…</h2>
+    <h2 style="color:#e63956">I have one more special thing to ask you…</h2>
     <button id="proposalBtn">Click this, Thanga Pullaa 💍</button>
     <div id="finalMessage">You’ve made my life so special! 💖 Will you be mine forever? 💍</div>
 </section>
@@ -517,21 +544,26 @@ h1, h2 {
       <div class="timeline-item right">
         <div class="content">
           <h3>2024 – Forever Promises 💍</h3>
-          <video controls>
-            <source src="promise.mp4" type="video/mp4">
-          </video>
-          <p>Every moment leads us to forever together ✨</p>
+           <img src="u me.jpg" alt="Love 2023">
+          <p>"In every fight, he would angrily say, 'Let’s break up'… yet neither of them could ever truly let go. Every pause, every harsh word only proves that their hearts are inseparable… their love always finds its way back, stronger than before… 💕" ✨</p>
         </div>
       </div>
 
     </div>
 </section>
+<!-- Final Video Section -->
+<section id="finalVideo">
+    <h2>ONE MORE SPECIAL VIDEO FOR YOU🎬❤️</h2>
+    <video width="30%" controls loop muted style="border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.2);">
+        <source src="MINE.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</section>
 
 <!-- Music -->
 <audio id="birthdayMusic" src="https://mobcup.fm/d/VdfBm4z6/mp3" loop></audio>
 <audio id="proposalMusic" src="aud.mp3"></audio>
-<audio id="afterProposalMusic" src="aud1.mp3" loop></audio>
-
+<audio id="afterProposalMusic" src="aud1.mp3"></audio>
 <script>
 // Surprise Button
 document.getElementById('openBtn').addEventListener('click', () => {
@@ -555,20 +587,36 @@ document.getElementById('proposalBtn').addEventListener('click', () => {
     proposalMusic.onended = () => afterProposalMusic.play();
 
     // Confetti
-    for (let i=0; i<100; i++) {
+    for (let i = 0; i < 100; i++) {
         let confetti = document.createElement('div');
         confetti.classList.add('confetti');
-        confetti.style.left = Math.random()*100 + 'vw';
-        confetti.style.backgroundColor = `hsl(${Math.random()*360}, 70%, 60%)`;
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
         document.getElementById('proposal').appendChild(confetti);
-        setTimeout(()=> confetti.remove(), 5000);
+        setTimeout(() => confetti.remove(), 5000);
     }
 
     // Gift slider starts
     document.querySelector('.gift-slider').style.animationPlayState = 'running';
-    setTimeout(()=> document.getElementById('gift').scrollIntoView({behavior:'smooth'}), 3000);
+    setTimeout(() => document.getElementById('gift').scrollIntoView({behavior: 'smooth'}), 3000);
 });
+
+// Stop afterProposalMusic when final video comes into view
+const afterProposalMusic = document.getElementById('afterProposalMusic');
+const finalVideo = document.getElementById('finalVid');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            afterProposalMusic.pause();
+            afterProposalMusic.currentTime = 0;
+        }
+    });
+}, { threshold: 0.5 });
+
+observer.observe(finalVideo);
 </script>
+
 
 </body>
 </html>
