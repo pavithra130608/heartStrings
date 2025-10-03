@@ -554,7 +554,7 @@ h1, h2 {
 <!-- Final Video Section -->
 <section id="finalVideo">
     <h2>ONE MORE SPECIAL VIDEO FOR YOU🎬❤️</h2>
-    <video width="30%" controls loop muted style="border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.2);">
+    <video width="30%" controls muted style="border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.2);">
         <source src="MINE.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -583,8 +583,11 @@ document.getElementById('proposalBtn').addEventListener('click', () => {
     birthdayMusic.pause();
     birthdayMusic.currentTime = 0;
 
+    // Play proposal song, then aud1.mp3
     proposalMusic.play();
-    proposalMusic.onended = () => afterProposalMusic.play();
+    proposalMusic.onended = () => {
+        afterProposalMusic.play();
+    };
 
     // Confetti
     for (let i = 0; i < 100; i++) {
@@ -601,21 +604,30 @@ document.getElementById('proposalBtn').addEventListener('click', () => {
     setTimeout(() => document.getElementById('gift').scrollIntoView({behavior: 'smooth'}), 3000);
 });
 
-// Stop afterProposalMusic when final video comes into view
-const afterProposalMusic = document.getElementById('afterProposalMusic');
-const finalVideo = document.getElementById('finalVid');
+// === Music Control Logic ===
+const afterProposalMusic = document.getElementById('afterProposalMusic'); // aud1.mp3
+const finalVideo = document.querySelector('#finalVideo video'); // final video element
+const loopSong = new Audio("aud3.mp3"); // aud3.mp3
+loopSong.loop = true; // make it loop
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            afterProposalMusic.pause();
-            afterProposalMusic.currentTime = 0;
-        }
-    });
-}, { threshold: 0.5 });
+// When aud1.mp3 ends → start aud3.mp3 loop
+afterProposalMusic.addEventListener('ended', () => {
+    loopSong.play();
+});
 
-observer.observe(finalVideo);
+// When final video starts → stop aud3.mp3
+finalVideo.addEventListener('play', () => {
+    loopSong.pause();
+    loopSong.currentTime = 0;
+});
+
+// When final video ends → restart aud3.mp3 loop
+finalVideo.addEventListener('ended', () => {
+    loopSong.play();
+});
 </script>
+
+
 
 
 </body>
